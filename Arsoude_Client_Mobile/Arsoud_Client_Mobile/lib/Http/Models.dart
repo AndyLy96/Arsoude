@@ -1,0 +1,150 @@
+
+import 'package:json_annotation/json_annotation.dart';
+
+part 'Models.g.dart';
+
+@JsonSerializable()
+class HelloWorld {
+
+  HelloWorld();
+
+  String text = "";
+
+  /// A necessary factory constructor for creating a new User instance
+  /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
+  /// The constructor is named after the source class, in this case, User.
+  factory HelloWorld.fromJson(Map<String, dynamic> json) => _$HelloWorldFromJson(json);
+
+  /// `toJson` is the convention for a class to declare support for serialization
+  /// to JSON. The implementation simply calls the private, generated
+  /// helper method `_$UserToJson`.
+  Map<String, dynamic> toJson() => _$HelloWorldToJson(this);
+}
+
+@JsonSerializable()
+class LoginDTO{
+
+  LoginDTO();
+
+  String username = "";
+  String password = "";
+
+
+  factory LoginDTO.fromJson(Map<String, dynamic> json) => _$LoginDTOFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LoginDTOToJson(this);
+}
+
+@JsonSerializable()
+class Randonne{
+
+  Randonne();
+  int id = 0;
+  String name ="";
+  String description = "";
+  String location ="";
+  int type = 0;
+  String? imageUrl= "";
+  Coordinates startingCoordinates = new Coordinates();
+  Coordinates endingCoordinates = new Coordinates();
+  bool isPublic = false;
+  double? rating = 0;
+
+  factory Randonne.fromJson(Map<String, dynamic> json) => _$RandonneFromJson(json);
+
+  Map<String, dynamic> toJson() => _$RandonneToJson(this);
+}
+
+@JsonSerializable()
+class Hike{
+
+  Hike();
+  DateTime date = DateTime.now();
+  String time = "";
+  int Distance = 0;
+  int TrailId = 0;
+  bool isCompleted = false;
+
+  factory Hike.fromJson(Map<String, dynamic> json) => _$HikeFromJson(json);
+  Map<String, dynamic> toJson() => _$HikeToJson(this);
+}
+
+@JsonSerializable()
+class Event{
+
+  Event();
+  DateTime date = DateTime.now();
+  String userName = "";
+  bool isCompleted = false;
+  bool isNew = false;
+  Randonne trail = new Randonne();
+
+
+  factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
+  Map<String, dynamic> toJson() => _$EventToJson(this);
+}
+
+@JsonSerializable()
+class NotificationSettings{
+
+  NotificationSettings();
+  int type = 0;
+  double distance = 0;
+  bool isTurnedOn = false;
+
+  factory NotificationSettings.fromJson(Map<String, dynamic> json) => _$NotificationSettingsFromJson(json);
+  Map<String, dynamic> toJson() => _$NotificationSettingsToJson(this);
+}
+
+@JsonSerializable()
+class Coordinates{
+
+  Coordinates();
+  double latitude = 0;
+  double longitude = 0;
+
+  factory Coordinates.fromJson(Map<String, dynamic> json) => _$CoordinatesFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CoordinatesToJson(this);
+
+}
+
+@JsonSerializable()
+class ImageRequestModel{
+  ImageRequestModel();
+
+  String url = "";
+
+  factory ImageRequestModel.fromJson(Map<String, dynamic> json) => _$ImageRequestModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ImageRequestModelToJson(this);
+
+}
+
+@JsonSerializable()
+class RatingRequestModel{
+  RatingRequestModel();
+
+  String Rating =  "";
+
+  factory RatingRequestModel.fromJson(Map<String, dynamic> json) => _$RatingRequestModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$RatingRequestModelToJson(this);
+
+}
+
+@JsonSerializable()
+class FilterDTO{
+  FilterDTO();
+
+  String? keyWord =  "";
+  int? type;
+  Coordinates? coordinates;
+  int? distance;
+
+  factory FilterDTO.fromJson(Map<String, dynamic> json) => _$FilterDTOFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FilterDTOToJson(this);
+
+}
+

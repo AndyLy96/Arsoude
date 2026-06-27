@@ -1,0 +1,96 @@
+using Arsoude_Backend.Data;
+using Arsoude_Backend.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+namespace Arsoude_Backend.Services
+{
+    public class AdminService
+    {
+        private readonly ApplicationDbContext _context;
+        
+
+
+        public AdminService( ApplicationDbContext context)
+        {
+            _context = context;
+
+        }
+
+
+        public async Task<Trail> SetStatus(bool status, int Trailid) {
+            Trail? trail = await _context.Trails.FindAsync(Trailid);
+
+            if (trail == null)
+            {
+                throw new NullReferenceException();
+            }
+            
+            trail.IsApproved = status;
+
+            User userOfficial = await _context.TrailUsers.Where(x => x.Id == trail.OwnerId).FirstOrDefaultAsync();
+
+
+            if (trail.isPublic == true)
+            {
+                Event newEvent = new Event();
+
+                newEvent.Trail = trail;
+                newEvent.Date = DateTime.Now;
+                newEvent.IsCompleted = false;
+                newEvent.IsNew = true;
+                newEvent.UserName = userOfficial.IdentityUser.UserName; 
+
+                _context.Events.Add(newEvent);
+            }
+
+
+
+            await _context.SaveChangesAsync();
+
+            return trail;
+        }
+
+        public async Task<Trail> DeleteTrail(int Trailid)
+        {
+            Trail? trail = await _context.Trails.FindAsync(Trailid);
+            if (trail == null)
+            {
+                throw new NullReferenceException();
+            }
+
+            _context.Trails.Remove(trail);
+
+            await _context.SaveChangesAsync();
+
+            return trail;
+
+
+        }
+
+
+         public async Task<List<Trail>> GetList()
+        {
+            
+           List<Trail> trails = await _context.Trails.Where(t => t.isPublic == true && t.IsApproved == null).ToListAsync();
+
+            return trails;
+
+
+
+        }
+
+        public async Task ApplyMigrations()
+        {
+
+            await _context.Database.MigrateAsync();
+
+        }
+
+        
+
+
+
+
+    }
+}

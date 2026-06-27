@@ -1,0 +1,132 @@
+// DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
+// This is a library that provides messages for a en locale. All the
+// messages from the main program should be duplicated here with the same
+// function name.
+
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
+// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+
+import 'package:intl/intl.dart';
+import 'package:intl/message_lookup_by_library.dart';
+
+final messages = new MessageLookup();
+
+typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
+
+class MessageLookup extends MessageLookupByLibrary {
+  String get localeName => 'en';
+
+  final messages = _notInlinedMessages(_notInlinedMessages);
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "ActivateNotifs":
+            MessageLookupByLibrary.simpleMessage("Enable Notifications"),
+        "Both": MessageLookupByLibrary.simpleMessage("Both"),
+        "Bycicle": MessageLookupByLibrary.simpleMessage("Bycicle"),
+        "No": MessageLookupByLibrary.simpleMessage("No"),
+        "PleaseCheck": MessageLookupByLibrary.simpleMessage(
+            "Please verify your password and your email address"),
+        "ReconectezInternetPourContinuer": MessageLookupByLibrary.simpleMessage(
+            "Please reconnect to the internet to continue."),
+        "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "VeuillezRessayerPlusTard": MessageLookupByLibrary.simpleMessage(
+            "Our servers are currently experiencing a problem. Please try again later."),
+        "Walking": MessageLookupByLibrary.simpleMessage("Walking"),
+        "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
+        "advertisement": MessageLookupByLibrary.simpleMessage("Advertisement"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "chercherUneRandonne":
+            MessageLookupByLibrary.simpleMessage("Search for a hike"),
+        "confirmSettings": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to save these settings?"),
+        "discoverNewHikes":
+            MessageLookupByLibrary.simpleMessage("Discover new hikes"),
+        "distance": MessageLookupByLibrary.simpleMessage("- Distance:"),
+        "dontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "faireLeTrajet": MessageLookupByLibrary.simpleMessage("Do the route"),
+        "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
+        "favoriteTrail":
+            MessageLookupByLibrary.simpleMessage("Your favorite trails"),
+        "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot password?"),
+        "getDirections": MessageLookupByLibrary.simpleMessage("Get Directions"),
+        "hikeUpdate": MessageLookupByLibrary.simpleMessage("Hike Updates"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "info": MessageLookupByLibrary.simpleMessage("Info"),
+        "location": MessageLookupByLibrary.simpleMessage("Location:"),
+        "locationServiceDisabled": MessageLookupByLibrary.simpleMessage(
+            "Location services are disabled"),
+        "locationServicePermissionsDisabled":
+            MessageLookupByLibrary.simpleMessage(
+                "Location services permissions are disabled"),
+        "locationServicePermissionsPermanentlyDisabled":
+            MessageLookupByLibrary.simpleMessage(
+                "Location permissions are permanently denied, we cannot request permissions."),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "myListOfTrails":
+            MessageLookupByLibrary.simpleMessage("My list of trails"),
+        "myTrails": MessageLookupByLibrary.simpleMessage("My trails"),
+        "noFavoriteTrails": MessageLookupByLibrary.simpleMessage(
+            "You haven\'t favorited any trails yet! Add a trail to your favorites to see it here."),
+        "noFavorites":
+            MessageLookupByLibrary.simpleMessage("You have no favorite hikes"),
+        "noHikesExist": MessageLookupByLibrary.simpleMessage(
+            "There are no hikes that can be found"),
+        "noRateHike": MessageLookupByLibrary.simpleMessage("No"),
+        "notifSettings":
+            MessageLookupByLibrary.simpleMessage("Notification Settings"),
+        "notifSettingsDistance":
+            MessageLookupByLibrary.simpleMessage("Notification for Distance"),
+        "notifSettingsTypes":
+            MessageLookupByLibrary.simpleMessage("Notification for Hike Types"),
+        "nousRencontronsUnProblemeAvecLeServeurActuellementVeuillezRevenir":
+            MessageLookupByLibrary.simpleMessage(
+                "We are currently experiencing an issue with the server. Please try again later."),
+        "onArsoude":
+            MessageLookupByLibrary.simpleMessage(" on the app Arsoude!"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "pleaseEnterAEmail": MessageLookupByLibrary.simpleMessage(
+            "Please enter an email address"),
+        "pleaseEnterAPassword":
+            MessageLookupByLibrary.simpleMessage("Please enter a password"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "rateHike": MessageLookupByLibrary.simpleMessage("Rate this hike!"),
+        "rateHikeContinue": MessageLookupByLibrary.simpleMessage("Continue"),
+        "rendrePriv": MessageLookupByLibrary.simpleMessage("Make Private"),
+        "rendrePublique": MessageLookupByLibrary.simpleMessage("Make Public"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "sendPhoto": MessageLookupByLibrary.simpleMessage("Send"),
+        "sessionHasExpiredPleaseLoginAgain":
+            MessageLookupByLibrary.simpleMessage(
+                "Session has expired. Please login again."),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "shareHike": MessageLookupByLibrary.simpleMessage(
+            "Hey look! I just completed : "),
+        "signInToYourAccount":
+            MessageLookupByLibrary.simpleMessage("Sign in to your account"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "stop": MessageLookupByLibrary.simpleMessage("Stop"),
+        "theTrailDoesNotExist":
+            MessageLookupByLibrary.simpleMessage("The trail does not exist."),
+        "type": MessageLookupByLibrary.simpleMessage("Type:"),
+        "uneErreurCestProduite":
+            MessageLookupByLibrary.simpleMessage("An error has occured"),
+        "vosRandonnes": MessageLookupByLibrary.simpleMessage("Your hikes"),
+        "vousNavezCreAucuneRandonne": MessageLookupByLibrary.simpleMessage(
+            "You haven\'t created any hikes until today. To continue in this section, please create a hike."),
+        "warningDeviation": MessageLookupByLibrary.simpleMessage(
+            "Warning! You are deviating from the path."),
+        "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+        "youNeedToBeLoggedInToAccessThisPage":
+            MessageLookupByLibrary.simpleMessage(
+                "You need to be logged in to access this page.")
+      };
+}

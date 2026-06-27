@@ -1,0 +1,197 @@
+<header class="header">
+    <div class="wrapper">
+        <div class="part_1">
+           
+            <div class="hamburger" (click)="toggleHamburger()" [ngClass]="{'animate': isClassVisible }">
+                <div class="bar"></div>
+                <div class="bar"></div>	
+                <div class="bar"></div>
+            </div>
+            <div class="left" [@slideInOut2]="slideInOut" [ngClass]="{'animate': isClassVisible }">
+                <div class="menu2" (click)="toggleHamburger()">              
+                  <div class="bar"></div>
+                  <div class="bar"></div>	
+                  <div class="bar"></div>
+                </div>
+                <ul class="vertical-list"> 
+                    <li>
+                        <a class="linkNav" href="#/newSearch/home">{{'header.explore' | translate}}</a>
+                    </li>
+                    <li>
+                        <a class="linkNav" href="">{{'header.community' | translate}}</a>
+                    </li>
+                    <li>
+                        <a class="linkNav" href="#/creation" *ngIf="userService.isConnected">{{'header.create' | translate}}</a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="sub-menu-wrap" id="subMenu" >
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="assets\images\userPlaceHolder.png" alt="userImage">
+                        <h4>{{userService.username}}</h4>
+                    </div>
+                                        <hr>
+
+                    <a routerLink="/profile" class="sub-menu-link">
+                        <i class="fa-solid fa-user"></i>
+                        <p>{{'menu.edit' | translate}}</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>{{'menu.settings' | translate}}</p>
+                        <span>></span>
+                    </a>
+                    <a routerLink="/userTrails" class="sub-menu-link">
+                        <i class="fa-solid fa-folder"></i>
+                        <p>{{'menu.userTrails' | translate}}</p>
+                        <span>></span>
+                    </a>
+                    <a href="#/help" class="sub-menu-link">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>{{'menu.help' | translate}}</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link" (click)="logout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <p>{{'menu.logout' | translate}}</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+            <a  href="" class="header_brand"><img class="logo" src="assets/images/Logo_OG.png" alt="Logo" /></a>
+        </div>
+        
+        <nav class="header_nav">
+            <ul class="navigationBar">
+                <li>
+                    <a class="linkNav" (click)="explore()">{{'header.explore' | translate}}</a>
+                </li>
+                <li>
+                    <a class="linkNav" href="">{{'header.community' | translate}}</a>
+                </li>
+                <li>
+                    <a class="linkNav" href="#/creation" *ngIf="userService.isConnected">{{'header.create' | translate}}</a>
+                </li>
+                <li>
+                    <a class="linkNav" href="#/approve" *ngIf="userService.isAdmin">Administration</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="header_options">
+            <ul>
+                <li class="help">
+                    <a class="linkNav" href="#/help">{{'header.help' | translate}}</a>
+                </li>
+                <li>
+                    <button *ngIf="!userService.isConnected" class="button" routerLink="/login">{{'header.loginButton' | translate}}</button>
+                    <nav>
+                        <div class="box" *ngIf="userService.isConnected">
+                            <img src="assets\images\userPlaceHolder.png" alt="userPlaceHolder" (click)="toggleMenu()">
+                        </div>
+                        <div class="sub-menu-wrap" id="subMenu" >
+                            <div class="sub-menu">
+                                <div class="user-info">
+                                    <img src="assets\images\userPlaceHolder.png" alt="userImage">
+                                    <h4>{{userService.username}}</h4>
+                                </div>
+                                <hr>
+ 
+                                <a routerLink="/profile" class="sub-menu-link">
+                                    <i class="fa-solid fa-user"></i>
+                                    <p>{{'menu.edit' | translate}}</p>
+                                    <span>></span>
+                                </a>
+                                <a href="#" class="sub-menu-link">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <p>{{'menu.settings' | translate}}</p>
+                                    <span>></span>
+                                </a>
+                                <a routerLink="/userTrails" class="sub-menu-link">
+                                    <i class="fa-solid fa-folder"></i>
+                                    <p>{{'menu.userTrails' | translate}}</p>
+                                    <span>></span>
+                                </a>
+                                <a href="#/help" class="sub-menu-link">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <p>{{'menu.help' | translate}}</p>
+                                    <span>></span>
+                                </a>
+                                <a href="#" class="sub-menu-link" (click)="logout()">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <p>{{'menu.logout' | translate}}</p>
+                                    <span>></span>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                   
+                </li>
+                <li>
+                    <a (click)="useLanguage()" href="#" class="traduction" *ngIf="!frenchTraduction">
+                        <p>fr</p>
+                        <p>/</p>
+                        <p style="font-weight: 900;">en</p>
+                    </a>
+                    <a (click)="useLanguage()" href="#" class="traduction" *ngIf="frenchTraduction">
+                        <p style="font-weight: 900;">fr</p>
+                        <p>/</p>
+                        <p>en</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <nav >
+            <ul class="specialUl">
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+<router-outlet> </router-outlet>
+<footer class="footer">
+    <div class="footer_container">
+        <div class="footer_options">
+            <img class="footer_logo" src="assets/images/Logo_V2.png" alt="">
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="footer_texte">{{'footer.title' | translate}}</div>
+        <div class="footer_texte">{{'footer.explore' | translate}}</div>
+        <div class="footer_texte">{{'footer.community' | translate}}</div>
+        <div class="footer_texte">{{'footer.create' | translate}}</div>
+        <div class="footer_texte">{{'footer.help' | translate}}</div>
+        <div class="footer_app_logos">
+            <img class="logo_space" src="assets/images/Footer_AppleLogo.png" alt="">
+            <img src="assets/images/Footer_GoogleLogo.png" alt="">
+        </div>
+        <div class="footer_texte_small">{{'footer.trails' | translate}}</div>
+        <div class="footer_texte_small">
+            <ul>
+                <li>{{'footer.reviews' | translate}}</li>
+                <li>{{'footer.recommended' | translate}}</li>
+                <li>{{'footer.comments' | translate}}</li>
+            </ul>
+        </div>
+        <div class="footer_texte_small">{{'footer.trails' | translate}}</div>
+        <div class="footer_texte_small">
+            <ul>
+                <li>{{'footer.about' | translate}}</li>
+                <li>{{'footer.contact' | translate}}</li>
+            </ul>
+        </div>
+        <div></div>
+    </div>
+    <div class="footer_sepator"></div>
+    <div class="footer_rights">
+        <p>{{'footer.llc' | translate}}</p>
+        <p>{{'footer.mark' | translate}}</p>
+        <br>
+        <p>{{'footer.policy' | translate}}</p>
+     
+    </div>
+</footer>

@@ -1,0 +1,84 @@
+<div class="container">
+        <div class="hero">
+                <video onloadedmetadata="this.muted=true" autoplay loop muted src="../../assets/videos/video_fond_principal.mp4"></video>
+                <div class="gradient-overlay"></div>
+                <h1>{{'home.title' | translate}}<span>{{'home.aventure' | translate}}</span></h1>
+                <input [(ngModel)]="searchInput" (keydown.enter)="onEnter()" placeholder="{{'home.placeholder' | translate}}" type="text">
+        </div>
+</div>
+<div class="container2">
+        <h2 class="bestTrailsTitle" style="margin-top: 80px;">{{'home.bestTrailsTitle' | translate}}</h2>
+        <div class="trailsContainer">
+                <div *ngFor="let trail of completedTrails">
+                        <div class="trailCard" data-tilt data-tilt-max="50" data-tilt-speed="400" data-tilt-perspective="500">
+                                <div class="trailCardImage">
+                                        <img *ngIf="trail.imageUrl != ''" [src]="trail.imageUrl" alt="image_trail">
+                                        <img *ngIf="trail.imageUrl == ''" src="assets\images\imagePlaceholder.jpg" alt="pas d image"> 
+                                        <div  *ngIf="trail.totalCompletions == 0" class="icon">--</div>                             
+                                        <div  *ngIf="trail.totalCompletions != 0" class="icon">{{trail.totalCompletions}}</div>                            
+                                 </div>
+                                <div class="trailInfo">
+                                        <h3 style="margin: 0;">{{trail.name}}</h3>
+                                        <p style="margin: 0;margin-top: 5px;">{{trail.location}}</p>
+                                        <p *ngIf="trail.rating == null" style="margin: 0;margin-top: 5px; font-weight: bold;">{{'home.noRatingsYet' | translate}}</p>
+                                        <p *ngIf="trail.rating != null" style="margin: 0;margin-top: 5px;"><i class="fa-solid fa-star"></i>{{trail.rating}} ({{trail.totalRatings}})</p>
+                                </div>
+                        </div> 
+                </div>
+        </div>
+</div>
+<div class="container3">
+        <div class="titleContainer2">
+                <h1>{{'home.appTitlePt1' | translate}} <span>{{'home.appTitlePt2' | translate}}</span></h1>
+                <h2 class="title2">{{'home.appSubPt1' | translate}} <span>{{'home.appSubPt2' | translate}}</span> {{'home.appSubPt3' | translate}}</h2>
+        </div>
+</div>
+<div class="containerOfContainer4">
+        <div class="container4">
+                <div class="infoAppContainer">
+                        <div class="infoApp">
+                                <h2 class="infoAppTitle">{{'home.infoAppTitle1Pt1' | translate}} <strong>{{'home.infoAppTitle1Pt2' | translate}}</strong></h2>
+                                <h3 class="infoAppText">{{'home.infoAppSub1' | translate}}</h3>
+                        </div>
+                        <div class="infoApp">
+                                <h2 class="infoAppTitle">{{'home.infoAppTitle2Pt1' | translate}} <strong>{{'home.infoAppTitle2Pt2' | translate}}</strong></h2>
+                                <h3 class="infoAppText">{{'home.infoAppSub2' | translate}}</h3>
+                        </div>
+                        <div class="infoApp">
+                                <h2 class="infoAppTitle">{{'home.infoAppTitle3Pt1' | translate}} <strong>{{'home.infoAppTitle3Pt2' | translate}}</strong></h2>
+                                <h3 class="infoAppText">{{'home.infoAppSub3' | translate}}</h3>
+                        </div>
+                </div>
+                <div class="divFlex" style="flex: 5;"></div>
+                <img src="../../assets/images/image_iphone.png" alt="image_application">
+        </div>
+</div>
+<div class="gameDownload">
+        <h1>Installer</h1>
+       
+        <div class="detailPreview">
+                <div class="petit">
+                        <p>
+                             Découvrez nos randonnées de manière innovante sur votre PC. Téléchargez maintenant le jeu et plongez-vous dans une aventure captivante ! Nous attendons avec impatience vos retours pour continuer à améliorer votre expérience de jeu. 
+                        </p>
+                        <div class="download">
+                                <h2><a href="../../assets/ArsoudeGame.zip" download style="text-decoration: none; color: white;">Télécharger</a></h2>
+                        </div>
+                </div>
+                <div class="imageFit">
+                        <img src="../../assets/images/preview.png" alt="preview">
+                </div>
+        </div>
+</div>
+
+<!-- <div id="boite">
+        <i class="fa-solid fa-circle-check"></i>
+        <p>La randonnée a été créé avec succès!</p>
+</div> -->
+
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector("trailCard"), {
+		max: 25,
+		speed: 400
+	});
+</script>
