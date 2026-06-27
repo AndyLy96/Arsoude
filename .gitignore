@@ -365,4 +365,6 @@ FodyWeavers.xsd
 **/firebase_options.dart
 **/GoogleService-info
 **/Arsoude/src/index
-**/src/app/app.module
+**/src/app/app.module**/firebase_options.dart
+**/google-services.json
+**/GoogleService-Info.plist
