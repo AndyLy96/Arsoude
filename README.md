@@ -1,2 +1,2 @@
 # Arsoude
-Projet Final du parcours du cégep Édouard-Montpetit
+Personal Project for hikers! 
